@@ -1,0 +1,29 @@
+doctype html
+html(ng-app='passwordApp')
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    script(src='/bower_components/angularjs/angular.js')
+    script(src='/javascripts/main.js')
+
+  body(ng-controller='PasswordCtrl')
+
+      nav.navbar.navbar-inverse.navbar-fixed-top
+        div.container
+            div.navbar-header
+                a.navbar-brand Demo
+            div
+                ul.nav.navbar-nav
+                    li
+                        a(href='/') index
+                    li
+                        <!--a(href='/admin') admin-->
+                    if admin === 'yes'
+                        li
+                            a(href='#', ng-click='logout()') Logout
+
+    div.container         
+        div.starter-template
+            block content
+

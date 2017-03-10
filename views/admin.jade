@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1 请登录,bibibibibibibibibibibibibibi~
+    #container.col
+        if admin === 'yes'
+            p 欢迎回来,admin #{flag}
+        else
+            p 
+                |  
+                br
+                | 
+                | .
+            p
+                form
+                    input#password.form-control(type='text', placeholder='password', ng-model='password')
+                    br
+                    button#enter.btn.btn-lg.btn-primary.btn-block(ng-click='enter_password()') ENTER
+
+        div.alert.alert-danger(ng-if="login.status == 'error'")
+            p {{login.error}}
